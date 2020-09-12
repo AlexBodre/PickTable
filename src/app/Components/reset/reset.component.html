@@ -1,0 +1,33 @@
+
+<div class="wrapper fadeInDown">
+    <div class="row mt-5">
+        <div class="col-md-4 mx-auto">
+            <div class="card bg-light" style="max-width: 30rem;">
+                <div class="card-title bg-light">
+                    <div class="card-header">
+                        <h3 class="pl-4 my-2">Reinicie contraseña</h3>
+                    </div>
+                </div>
+                <div class="card-body" style="margin-top: -12%;">
+                    <form  >
+                        <fieldset>
+                            <div class="form-group row"></div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Correo Electronico:</label>
+                                <input type="email" class="form-control"  [formControl]="userEmail" id="exampleInputEmail1"
+                                    aria-describedby="emailHelp" placeholder="Escriba direccion email" />
+                                
+                            </div>
+                            
+
+                            <button type="submit" class="btn btn-outline-success btn-block" (click)="OnReset()">
+                                Resetear contraseña
+                            </button>
+
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

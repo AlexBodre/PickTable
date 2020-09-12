@@ -1,0 +1,15 @@
+<div class="card res-card shadow p-2 mb-5 bg-white rounded">
+    <img height="100px" width="20%" src="https://img.freepik.com/foto-gratis/mesa-madera-vacia-fondo-borroso_28283-615.jpg?size=626&ext=jpg&ga=GA1.2.1220817299.1599531655" 
+    class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title texto">{{ restaurant.name }}</h5>
+      <p class="card-text texto">{{ restaurant.address }}, {{ restaurant.city }}</p>
+      <p class="card-text"><b>Phone: </b> {{ restaurant.phone }}</p>
+      <p class="card-text"><b>Price: </b>
+         <star-rating value="{{ restaurant.price}}" totalstars="{{totalstar}}" checkedcolor="blue" uncheckedcolor="black" size="24px" readonly="true"></star-rating>
+      </p>
+      
+      <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
+      <a class="btn btn-success btn-block text-white" [routerLink]="['/detalle', restaurant.id]">Details</a>
+    </div>
+  </div>

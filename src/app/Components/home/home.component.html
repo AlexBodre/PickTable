@@ -1,0 +1,33 @@
+<div class="jumbotron p-4 p-md-5 text-white rounded bg-dark" style="background-image: url(../../../assets/img/slider-03.jpg);">
+  <div class="col-md-6 px-0">
+    <h1 class="display-4 font-italic">Picka Table</h1>
+    <p class="lead my-3">"Donde puedes reservar sin tu mente estresar"</p>
+    <p class="lead mb-0"><a href="#" class="text-white font-weight-bold">Elija la ciudad del restaurante...</a></p>
+    <div class="form-group">
+      <div class="row">
+        <div class=" col-md-7 p-lg-3 mx-auto ">
+          <select class="form-control" [(ngModel)]="selectedCity" (change)="selectChanged($event.target.value)">
+            <option *ngFor="let city of cities;" value="{{ city }}">{{ city }}</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+ 
+<div class="row">
+  <div *ngFor='let restaurant of restaurants | paginate: {itemsPerPage: 6, currentPage: p};'class="col-md-2 p-1" style="width: 40%;">
+    <app-results [extRestaurant]="restaurant"></app-results>
+  </div>
+  
+</div>
+
+<div class="row mt-1">
+<div class="col-md-12 d-flex justify-content-center">
+  <pagination-controls (pageChange)="p = $event"></pagination-controls> 
+
+</div>
+</div>

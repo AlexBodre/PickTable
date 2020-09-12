@@ -1,0 +1,14 @@
+.res-card {
+    transition: transform 350ms;
+  }
+  
+  .res-card:hover {
+    transform: scale(1.04);
+    /* font-weight: bold; */
+  }
+
+  .texto {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }

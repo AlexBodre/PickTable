@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "basiccrud-cd060": {
+      "hosting": {
+        "PickTable": [
+          "basiccrud-cd060"
+        ]
+      }
+    }
+  }
+}

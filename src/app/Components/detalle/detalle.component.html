@@ -1,0 +1,17 @@
+<div class="card mb-3">
+    <img style="width: 400px; height: 60%;" src="https://img.freepik.com/foto-gratis/mesa-madera-vacia-fondo-borroso_28283-615.jpg?size=626&ext=jpg&ga=GA1.2.1220817299.1599531655"
+     class="card-img-top" alt="...">
+    <div class="card-body">
+        <a [routerLink]="['/detalle',rest.id]"></a>
+      <h5 class="card-title">{{rest.name}}</h5>
+      <p class="card-text">{{rest.address}}</p>
+      <p class="card-text"><small class="text-muted">{{rest.phone}}</small></p>
+    </div>
+</div>
+
+<div class="col-md-4 ml-5 mb-5" style="width: 50%; height: 90%;">
+    <agm-map [zoom]="17" [latitude]="rest.lat" [longitude]="rest.lng">
+        <agm-marker [latitude]="rest.lat" [longitude]="rest.lng"></agm-marker>
+    </agm-map>
+
+ </div>
