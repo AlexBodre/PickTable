@@ -18,8 +18,8 @@
     
 
  
-<div class="row">
-  <div *ngFor='let restaurant of restaurants | paginate: {itemsPerPage: 6, currentPage: p};'class="col-md-2 p-1" style="width: 40%;">
+<div class="row pl-2">
+  <div *ngFor='let restaurant of restaurants | paginate: {itemsPerPage: 4, currentPage: p};'class="col-md-3 p-1" style="width: 40%;">
     <app-results [extRestaurant]="restaurant"></app-results>
   </div>
   

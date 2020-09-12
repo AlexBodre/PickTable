@@ -9,9 +9,9 @@ import { Observable, of } from 'rxjs';
   providedIn: 'root',
 })
 export class AuthService {
-  public user: User;
   public user$: Observable<User>;
   public isLoggedIn: boolean;
+  
   constructor(public afAuth: AngularFireAuth, private afs: AngularFirestore) {
     this.user$ = this.afAuth.authState.pipe(
       switchMap((user) => {

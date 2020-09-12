@@ -1,17 +1,52 @@
-<div class="card mb-3">
-    <img style="width: 400px; height: 60%;" src="https://img.freepik.com/foto-gratis/mesa-madera-vacia-fondo-borroso_28283-615.jpg?size=626&ext=jpg&ga=GA1.2.1220817299.1599531655"
-     class="card-img-top" alt="...">
-    <div class="card-body">
-        <a [routerLink]="['/detalle',rest.id]"></a>
-      <h5 class="card-title">{{rest.name}}</h5>
-      <p class="card-text">{{rest.address}}</p>
-      <p class="card-text"><small class="text-muted">{{rest.phone}}</small></p>
+<div class="container" *ngIf="rest">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card mb-3">
+        <h3 class="card-title">{{rest.name}}</h3>
+        <img style="width: 400px; height: 60%;"
+          src="https://img.freepik.com/foto-gratis/mesa-madera-vacia-fondo-borroso_28283-615.jpg?size=626&ext=jpg&ga=GA1.2.1220817299.1599531655"
+          class="card-img-top" alt="...">
+        <div class="card-body">
+          <a [routerLink]="['/detalle',rest.id]"></a>
+
+          <p class="card-text"><b>Address: </b>{{rest.address}}</p>
+          <p class="card-text"><b>Phone:</b> {{rest.phone}}</p>
+        </div>
+      </div>
     </div>
-</div>
 
-<div class="col-md-4 ml-5 mb-5" style="width: 50%; height: 90%;">
+    <div class="col-md-6">
+      <div class="card-body">
+        <form [formGroup]="reserveForm" (ngSubmit)="onReserve()">
+          <fieldset>
+            <div class="form-group row"></div>
+
+
+            <div class="form-group">
+              <label for="name">Numero de personas</label>
+              <input id="peopleqty" type="number" class="form-control" formControlName="peopleqty"
+                placeholder="Escriba la cantidad de personas" />
+            </div>
+            <div class="form-group">
+              <label for="name">Fecha</label>
+              <input id="date" type="date" class="form-control" formControlName="date" />
+            </div>
+            <div class="form-group">
+              <label for="name">Hora</label>
+              <input id="time" type="time" class="form-control" formControlName="hour" />
+            </div>
+          </fieldset>
+          <button [disabled]="this.reserveForm.invalid" type="submit" class="btn btn-outline-success btn-block">
+            Enviar
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <hr>
+  <div class="col-md-12 ml-5 mb-5" style="width: 80%; height: 70%;">
     <agm-map [zoom]="17" [latitude]="rest.lat" [longitude]="rest.lng">
-        <agm-marker [latitude]="rest.lat" [longitude]="rest.lng"></agm-marker>
+      <agm-marker [latitude]="rest.lat" [longitude]="rest.lng"></agm-marker>
     </agm-map>
-
- </div>
+  </div>
+</div>
