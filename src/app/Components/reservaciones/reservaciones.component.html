@@ -1,0 +1,15 @@
+<div class="container">
+    <h3>Mis Reservaciones</h3>
+    <div class="row" *ngIf="reservaList">
+        <div class="col-md-4" *ngFor="let reserva of reservaList">
+            <div class="card" style="width: 25rem;">
+                <div class="card-body">
+                    <h5 class="card-title"> <b>Restaurante:</b> </h5><p>{{reserva.name}}</p>
+                    <h6 class="card-subtitle mb-2"><b>Fecha reserva:</b> </h6><p> {{reserva.date}}, {{reserva.hour}}</p>
+                    
+                    <p class="card-text"> <b>Numero de personas:</b></p><p> {{reserva.peopleqty}}</p>              
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

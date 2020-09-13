@@ -6,6 +6,7 @@ import { RegistroComponent } from './Components/registro/registro.component';
 import { ResetComponent } from './Components/reset/reset.component';
 import {LoginComponent} from './Components/login/login.component';
 import {DetalleComponent} from './Components/detalle/detalle.component';
+import { ReservacionesComponent } from './Components/reservaciones/reservaciones.component';
   
 
 
@@ -15,7 +16,8 @@ const routes: Routes = [
   {path: 'registro', component:RegistroComponent},
    {path: 'reset', component:ResetComponent},
    {path: 'login', component:LoginComponent},
-   {path: 'detalle/:id', component:DetalleComponent}
+   {path: 'detalle/:id', component:DetalleComponent},
+  {path: 'reservaciones', component:ReservacionesComponent}
   
   
 ];

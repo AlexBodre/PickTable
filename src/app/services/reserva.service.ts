@@ -32,5 +32,18 @@ private reservColletion : AngularFirestoreCollection<Reserva>;
   addReserve(reserve: Reserva){
    return this.reservColletion.add(reserve);
     }
+
+    getAllReserveByUserNew(userID: string): Observable<Reserva[]> {
+      return this.afs.collection<Reserva>('reserve', ref => ref.where('userId', '==', userID)).snapshotChanges()
+          .pipe(
+              map(reservas => {
+                    return reservas.map(r => {
+                      const data = r.payload.doc.data();
+                      const id = r.payload.doc.id;
+                      return { id, ...data};
+                    })
+                  }));
+    }
+
   }
 

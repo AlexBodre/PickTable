@@ -11,11 +11,12 @@ import { Observable, of } from 'rxjs';
 export class AuthService {
   public user$: Observable<User>;
   public isLoggedIn: boolean;
-  
+
   constructor(public afAuth: AngularFireAuth, private afs: AngularFirestore) {
+
     this.user$ = this.afAuth.authState.pipe(
       switchMap((user) => {
-        if(user && user.emailVerified) {
+        if(user) {
           return this.afs.doc<User>(`users/${user.uid}`).valueChanges();
         }
         return of(null);

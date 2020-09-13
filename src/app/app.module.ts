@@ -17,6 +17,7 @@ import { DetalleComponent } from './Components/detalle/detalle.component';
 import { RatingModule } from 'ng-starrating';
 import { AgmCoreModule } from '@agm/core';
 import{ NgxPaginationModule} from 'ngx-pagination';
+import { ReservacionesComponent } from './Components/reservaciones/reservaciones.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import{ NgxPaginationModule} from 'ngx-pagination';
     LoginComponent,
     ResetComponent,
     ResultsComponent,
-    DetalleComponent
+    DetalleComponent,
+    ReservacionesComponent
     
   ],
   imports: [
